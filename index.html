@@ -37,10 +37,10 @@
     </header>
 
     <main>
-        <section class="container overflow-hidden text-center mt-5" id="players-container">
+        <section class="container overflow-hidden text-center mt-5">
             <div class="row g-4">
                 <!-- players container  -->
-                <div class="col-9">
+                <div class="col-9" id="players-container">
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                         <!-- 1st player  -->
                         <div class="col">
@@ -132,7 +132,6 @@
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -154,70 +153,69 @@
 
                         <!-- calculation part  -->
                         <div class="col">
-                            <div class="card h-100 rounded-0 border-0 bg-dark">
-                                <div class="black-bg-color">
-                                    <h5 class="mt-3 fw-bold text-white sketch-underline-orange">Budget</h5>
-                                    <div class="row g-3 align-items-center mx-3">
-                                        <div class="col-5">
-                                            <label for="perPlayerField" class="col-form-label">Per Player</label>
-                                        </div>
+                            <div class="black-bg-color">
+                                <h5 class="mt-3 fw-bold text-white sketch-underline-orange">Budget</h5>
+                                <div class="row g-3 align-items-center text-start mx-2">
 
-                                        <div class="col-7">
-                                            <input type="text" id="perPlayerField" class="form-control"
-                                                placeholder="Cost">
-                                        </div>
-
-                                        <div class="col-12 d-flex justify-content-center align-items-center">
-                                            <button type="button" class="btn btn-success btn-block">CALCULATE</button>
-                                        </div>
-
-                                        <div class="col-7">
-                                            <label for="playerExpenses" class="col-form-label">Player Expenses</label>
-                                        </div>
-
-                                        <div class="col-5">
-                                            <label for="playerExpenses" class="col-form-label">$ </label>
-                                        </div>
-
-                                        <div class="col-5">
-                                            <label for="managerField" class="col-form-label">Manager</label>
-                                        </div>
-
-                                        <div class="col-7">
-                                            <input type="text" id="managerField" class="form-control" placeholder="">
-                                        </div>
-
-                                        <div class="col-5">
-                                            <label for="coachField" class="col-form-label">Coach</label>
-                                        </div>
-
-                                        <div class="col-7">
-                                            <input type="text" id="coachField" class="form-control" placeholder="">
-                                        </div>
-
-                                        <div class="col-12 d-flex justify-content-center align-items-center">
-                                            <button type="button" class="btn btn-success btn-block">CALCULATE
-                                                TOTAL</button>
-                                        </div>
-
-                                        <div class="col-7">
-                                            <label for="playerExpenses" class="col-form-label">Total</label>
-                                        </div>
-
-                                        <div class="col-5 text-warning">
-                                            <label for="playerExpenses" class="col-form-label">$ </label>
-                                        </div>
+                                    <!-- per player cost input  -->
+                                    <div class="col-6">
+                                        <label class="text-white">Per
+                                            Player</label>
                                     </div>
-
-                                    <button class="btn btn-primary border-0 fw-semibold rounded-0 mx-4 my-1">
-                                        Select
-                                    </button>
+                                    <div class="col-6">
+                                        <input id="perPlayerCostInput"
+                                            class="black-bg-color w-100 rounded-0 p-0 text-white border border-dark">
+                                    </div>
+                                    <!-- calculate button -->
+                                    <div class="cols-12">
+                                        <button class="btn btn-primary border-0 fw-semibold rounded-0 w-100 mt-2">
+                                            Calculate
+                                        </button>
+                                    </div>
+                                    <!-- player total expense  -->
+                                    <div class="col-7">
+                                        <label class="text-white">Player
+                                            Expenses</label>
+                                    </div>
+                                    <div class="col-5">
+                                        <label class="text-white">$ <span id="player-total-expense"></span> </label>
+                                    </div>
+                                    <!-- Manager Cost input  -->
+                                    <div class="col-6">
+                                        <label class="text-white text-start">Manager</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <input id="managerCostInput"
+                                            class="black-bg-color w-100 rounded-0 p-0 text-white border border-dark mb-1">
+                                    </div>
+                                    <!-- Coach Cost input  -->
+                                    <div class="col-6">
+                                        <label class="text-white text-start ps-0">Coach</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <input id="coachCostInput"
+                                            class="black-bg-color w-100 rounded-0 p-0 text-white border border-dark mb-1">
+                                    </div>
+                                    <!-- calculate Total button -->
+                                    <div class="cols-12">
+                                        <button class="btn btn-primary border-0 fw-semibold rounded-0 w-100 mt-2">
+                                            Calculate Total
+                                        </button>
+                                    </div>
+                                    <!-- Net total expense  -->
+                                    <div class="col-7">
+                                        <label class="text-warning fs-5 fw-semibold">Total Expense
+                                        </label>
+                                    </div>
+                                    <div class="col-5">
+                                        <label class="text-danger fw-semibold fs-5">$ <span id="total-expense"></span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
         </section>
-
     </main>
 
 
