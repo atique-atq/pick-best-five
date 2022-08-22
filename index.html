@@ -40,7 +40,7 @@
         <section class="container overflow-hidden text-center mt-5" id="players-container">
             <div class="row g-4">
                 <!-- players container  -->
-                <div class="col-8">
+                <div class="col-9">
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                         <!-- 1st player  -->
                         <div class="col">
@@ -137,9 +137,9 @@
                 </div>
 
                 <!-- calculation container -->
-                <div class="col-4">
+                <div class="col-3">
                     <div class="row row-cols-1 g-4">
-                        <!-- 1st part  -->
+                        <!-- selected five part  -->
                         <div class="col">
                             <div class="card rounded-0 border-0 bg-dark">
                                 <div class="black-bg-color">
@@ -152,22 +152,70 @@
                             </div>
                         </div>
 
-                        <!-- 2nd part  -->
+                        <!-- calculation part  -->
                         <div class="col">
                             <div class="card h-100 rounded-0 border-0 bg-dark">
-                                <img src="images/players/player-1.jpg" class="card-img-top border-0 rounded-0"
-                                    alt="Image of football player Neymar Jr">
-                                <div class="card-body">
-                                    <h5 class="card-title fw-bold text-white">Neymar Jr</h5>
-                                    <small class="text-white-50 fs-6">36 Goals. &nbsp; 120 Assists</small>
+                                <div class="black-bg-color">
+                                    <h5 class="mt-3 fw-bold text-white sketch-underline-orange">Budget</h5>
+                                    <div class="row g-3 align-items-center mx-3">
+                                        <div class="col-5">
+                                            <label for="perPlayerField" class="col-form-label">Per Player</label>
+                                        </div>
+
+                                        <div class="col-7">
+                                            <input type="text" id="perPlayerField" class="form-control"
+                                                placeholder="Cost">
+                                        </div>
+
+                                        <div class="col-12 d-flex justify-content-center align-items-center">
+                                            <button type="button" class="btn btn-success btn-block">CALCULATE</button>
+                                        </div>
+
+                                        <div class="col-7">
+                                            <label for="playerExpenses" class="col-form-label">Player Expenses</label>
+                                        </div>
+
+                                        <div class="col-5">
+                                            <label for="playerExpenses" class="col-form-label">$ </label>
+                                        </div>
+
+                                        <div class="col-5">
+                                            <label for="managerField" class="col-form-label">Manager</label>
+                                        </div>
+
+                                        <div class="col-7">
+                                            <input type="text" id="managerField" class="form-control" placeholder="">
+                                        </div>
+
+                                        <div class="col-5">
+                                            <label for="coachField" class="col-form-label">Coach</label>
+                                        </div>
+
+                                        <div class="col-7">
+                                            <input type="text" id="coachField" class="form-control" placeholder="">
+                                        </div>
+
+                                        <div class="col-12 d-flex justify-content-center align-items-center">
+                                            <button type="button" class="btn btn-success btn-block">CALCULATE
+                                                TOTAL</button>
+                                        </div>
+
+                                        <div class="col-7">
+                                            <label for="playerExpenses" class="col-form-label">Total</label>
+                                        </div>
+
+                                        <div class="col-5 text-warning">
+                                            <label for="playerExpenses" class="col-form-label">$ </label>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-primary border-0 fw-semibold rounded-0 mx-4 my-1">
+                                        Select
+                                    </button>
                                 </div>
-                                <button class="btn btn-primary border-0 fw-semibold rounded-0 mx-4 my-1">
-                                    Select
-                                </button>
                             </div>
                         </div>
                     </div>
-                </div>
         </section>
 
     </main>
