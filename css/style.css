@@ -50,3 +50,7 @@ body{
     background-size: 100% 30px;
     padding-bottom: 30px;
 }
+
+.btn.btn-primary[disabled] {
+    background-color: grey;
+}

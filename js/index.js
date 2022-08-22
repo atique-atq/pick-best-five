@@ -1,6 +1,7 @@
 document.getElementById('players-container').addEventListener('click', function (event) {
+    let btn = document.getElementById(event.target.id);
+    btn.setAttribute('disabled', true);
     let playerName = event.target.previousElementSibling.firstChild.nextElementSibling.innerText;
-    // console.log(playerName);
     displayPlayerList(playerName)
 })
 
