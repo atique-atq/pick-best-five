@@ -34,3 +34,9 @@ body{
     font-family: 'Berkshire Swash', sans-serif;
     color: #FF5E19;
 }
+
+.sketch-underline-white{
+    background: url(../images/underline/white.PNG) bottom right no-repeat;
+    background-size: 100% 30px;
+    padding-bottom: 20px;
+    }
