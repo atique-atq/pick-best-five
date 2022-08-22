@@ -8,6 +8,10 @@ body{
     background-color:  #3d3c3c ; 
 }
 
+.black-bg-color{
+    background-color:#0D0D0D;
+}
+
 #banner-style{
     height: 360px;
     background-color: black;
@@ -39,4 +43,10 @@ body{
     background: url(../images/underline/white.PNG) bottom right no-repeat;
     background-size: 100% 30px;
     padding-bottom: 20px;
-    }
+}
+
+.sketch-underline-orange{
+    background: url(../images/underline/orange.PNG) bottom right no-repeat;
+    background-size: 100% 30px;
+    padding-bottom: 30px;
+}
