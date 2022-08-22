@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+#bg-color{
+    background-color:  #3d3c3c ; 
+}
+
+#banner-style{
+    height: 360px;
+    background-color: black;
+    position: relative;
+
+}
+
+#banner-style::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 90%;
+    border-color: transparent transparent transparent ;
+    border-width: 3px;
+    border-style: solid;
+    top: 90%;
+    left: 85%;
+    border-radius: 50%;
+    transform: rotate(55deg);
+    background-color: #3d3c3c;
+  }
+
+.fancy-font{
+    font-family: 'Berkshire Swash', sans-serif;
+    color: #FF5E19;
+}
