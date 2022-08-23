@@ -20,6 +20,9 @@ function displayPlayerList(playerName) {
     listItem.classList.add("list-group-item", "text-light", "p-1");
     listItem.innerText = playerName;
     ol.appendChild(listItem);
+    let playerTotalExpense = getPlayerTotalExpense();
+    //after adding a new player list, empty the previous calculation;
+    makeEmptyFieldValue(playerTotalExpense);
 }
 
 //get current selected players
@@ -33,7 +36,8 @@ function calculatePlayerPrice() {
     let inputPlayerPriceInNumber = parseFloat(inputPlayerPriceField.value) 
     if (inputPlayerPriceInNumber > 0) {
         totalPlayerPrice = getPlayerNumber() * inputPlayerPriceInNumber
-        document.getElementById('player-total-expense').innerText = totalPlayerPrice;
+        getPlayerTotalExpense().innerText = totalPlayerPrice;
+        // after calculating player price, empty the input field
         makeEmptyInputValue(inputPlayerPriceField)
     }
     else {
@@ -41,6 +45,19 @@ function calculatePlayerPrice() {
     }
 }
 
+/*--------------------
+   utility functions 
+ --------------------*/
+function getPlayerTotalExpense() {
+    return document.getElementById('player-total-expense');
+}
+
+// function for empty any filed
+function makeEmptyFieldValue(field) { 
+    field.innerText = '';
+}
+
+//function for empty any input filed
 function makeEmptyInputValue(inputField) { 
     inputField.value = '';
 }
