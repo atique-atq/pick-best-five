@@ -23,6 +23,10 @@ function displayPlayerList(playerName) {
     let playerTotalExpense = getPlayerTotalExpense();
     //after adding a new player list, empty the previous calculation;
     makeEmptyFieldValue(playerTotalExpense);
+    makeEmptyFieldValue(getNetExpense());
+    // makeEmptyInputValue(getManagerInput());
+    // makeEmptyInputValue(getCoachInput());
+
 }
 
 //calculate total player price
@@ -44,8 +48,13 @@ function calculatePlayerPrice() {
 function calculateNetPrice() {
     let inputManagerPriceInNumber = parseFloat(getManagerInput().value);
     let inputCoachPriceInNumber = parseFloat(getCoachInput().value);
-    if (inputManagerPriceInNumber >= 0 && inputCoachPriceInNumber >=0) {
-        
+    let playerTotalExpense = parseFloat(getPlayerTotalExpense().innerText);
+    if (inputManagerPriceInNumber >= 0 && inputCoachPriceInNumber >= 0 && playerTotalExpense >=0) {
+        let netTotalExpense = playerTotalExpense + inputManagerPriceInNumber + inputCoachPriceInNumber;
+        getNetExpense().innerText = netTotalExpense; 
+       //empty input manager and couch value after calculation
+        makeEmptyInputValue(getManagerInput());
+        makeEmptyInputValue(getCoachInput());
     }
     else {
         giveErrorAlert();
@@ -59,6 +68,11 @@ function calculateNetPrice() {
 // retrieve player total expense field
 function getPlayerTotalExpense() {
     return document.getElementById('player-total-expense');
+}
+
+//retrive net expense field
+function getNetExpense() {
+    return document.getElementById('total-expense');
 }
 
 //get current selected players
