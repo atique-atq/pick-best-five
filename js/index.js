@@ -35,9 +35,16 @@ function calculatePlayerPrice() {
         totalPlayerPrice = getPlayerNumber() * inputPlayerPriceInNumber
         document.getElementById('player-total-expense').innerText = totalPlayerPrice;
         makeEmptyInputValue(inputPlayerPriceField)
-    } 
+    }
+    else {
+        giveErrorAlert();
+    }
 }
 
 function makeEmptyInputValue(inputField) { 
     inputField.value = '';
+}
+
+function giveErrorAlert() {
+    alert('Please check your insert value');
 }
