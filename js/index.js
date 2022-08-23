@@ -20,24 +20,15 @@ function displayPlayerList(playerName) {
     listItem.classList.add("list-group-item", "text-light", "p-1");
     listItem.innerText = playerName;
     ol.appendChild(listItem);
-    let playerTotalExpense = getPlayerTotalExpense();
-    //after adding a new player list, empty the previous calculation;
-    makeEmptyFieldValue(playerTotalExpense);
-    makeEmptyFieldValue(getNetExpense());
-    // makeEmptyInputValue(getManagerInput());
-    // makeEmptyInputValue(getCoachInput());
-
+    emptyAllValue();
 }
 
 //calculate total player price
 function calculatePlayerPrice() {
-    let inputPlayerPriceField = document.getElementById('perPlayerCostInput')
-    let inputPlayerPriceInNumber = parseFloat(inputPlayerPriceField.value) 
+    let inputPlayerPriceInNumber = parseFloat(getPerPlayerPrice().value) 
     if (inputPlayerPriceInNumber >= 0) {
         totalPlayerPrice = getPlayerNumber() * inputPlayerPriceInNumber
         getPlayerTotalExpense().innerText = totalPlayerPrice;
-        // after calculating player price, empty the input field
-        makeEmptyInputValue(inputPlayerPriceField)
     }
     else {
         giveErrorAlert();
@@ -52,9 +43,6 @@ function calculateNetPrice() {
     if (inputManagerPriceInNumber >= 0 && inputCoachPriceInNumber >= 0 && playerTotalExpense >=0) {
         let netTotalExpense = playerTotalExpense + inputManagerPriceInNumber + inputCoachPriceInNumber;
         getNetExpense().innerText = netTotalExpense; 
-       //empty input manager and couch value after calculation
-        makeEmptyInputValue(getManagerInput());
-        makeEmptyInputValue(getCoachInput());
     }
     else {
         giveErrorAlert();
@@ -64,18 +52,19 @@ function calculateNetPrice() {
 /*--------------------
    utility functions 
  --------------------*/
+function getPerPlayerPrice() {
+    return document.getElementById('perPlayerCostInput');
+}
 
-// retrieve player total expense field
 function getPlayerTotalExpense() {
     return document.getElementById('player-total-expense');
 }
 
-//retrive net expense field
 function getNetExpense() {
     return document.getElementById('total-expense');
 }
 
-//get current selected players
+//get current selected players number
 function getPlayerNumber() {
     return document.querySelectorAll('ol li').length;
 }
@@ -88,12 +77,18 @@ function getCoachInput() {
     return document.getElementById('coachCostInput');
 }
 
-// function for empty any filed
+function emptyAllValue() {
+    makeEmptyInputValue(getPerPlayerPrice());
+    makeEmptyFieldValue(getPlayerTotalExpense());
+    makeEmptyFieldValue(getNetExpense());
+    makeEmptyInputValue(getManagerInput());
+    makeEmptyInputValue(getCoachInput());
+}
+
 function makeEmptyFieldValue(field) { 
     field.innerText = '';
 }
 
-//function for empty any input filed
 function makeEmptyInputValue(inputField) { 
     inputField.value = '';
 }
